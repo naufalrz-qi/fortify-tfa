@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+
+
 <div class="container">
+    <p>Ini adalah user dengan role <strong>{{ Auth::user()->role }}</strong></p>
     <div class="row justify-content-center text-center">
         <div class="col-md-8">
             <div class="card">

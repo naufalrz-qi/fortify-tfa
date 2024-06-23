@@ -20,3 +20,15 @@ Route::get('/', function () {
 Route::middleware(['auth',  'verified'])->group(function () {
     Route::view('home', 'user.tfa-settings')->name('home');
 });
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/admin', function () {
+        return 'Halaman Admin';
+    });
+});
+
+Route::middleware(['auth', 'role:user'])->group(function () {
+    Route::get('/user', function () {
+        return 'Halaman User';
+    });
+});
